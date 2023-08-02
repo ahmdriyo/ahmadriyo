@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pemutar Musik</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="fontawesome-free-6.3.0-web/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body> 
+  <div class="tes">
+    <h2>Desktop Only (Minimal lebar 1250px)
+      <br>
+      Responsif segera hadir
+    </h2>
+  </div>
+  <div class="container">
+    <div class="start-musik">
+      <div class="icon">
+      <i id="home" class="fa-house fa-solid "><p>HOME</p></i>
+        <br>
+      <i class="fa-solid fa-magnifying-glass" id="searchIcon"><p>Search</p></i>
+        <div id="searchBox" class="hidden">
+          <input type="text" id="SearchInput" placeholder=" Type to Search....">
+        </div>
+        <br>
+      <i class="fa-solid fa-music"><p>Last Play</p></i>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#15181d" fill-opacity="1" d="M0,64L14.1,69.3C28.2,75,56,85,85,112C112.9,139,141,181,169,186.7C197.6,192,226,160,254,170.7C282.4,181,311,235,339,234.7C367.1,235,395,181,424,149.3C451.8,117,480,107,508,122.7C536.5,139,565,181,593,186.7C621.2,192,649,160,678,149.3C705.9,139,734,149,762,154.7C790.6,160,819,160,847,165.3C875.3,171,904,181,932,176C960,171,988,149,1016,160C1044.7,171,1073,213,1101,224C1129.4,235,1158,213,1186,176C1214.1,139,1242,85,1271,85.3C1298.8,85,1327,139,1355,154.7C1383.5,171,1412,149,1426,138.7L1440,128L1440,0L1425.9,0C1411.8,0,1384,0,1355,0C1327.1,0,1299,0,1271,0C1242.4,0,1214,0,1186,0C1157.6,0,1129,0,1101,0C1072.9,0,1045,0,1016,0C988.2,0,960,0,932,0C903.5,0,875,0,847,0C818.8,0,791,0,762,0C734.1,0,706,0,678,0C649.4,0,621,0,593,0C564.7,0,536,0,508,0C480,0,452,0,424,0C395.3,0,367,0,339,0C310.6,0,282,0,254,0C225.9,0,198,0,169,0C141.2,0,113,0,85,0C56.5,0,28,0,14,0L0,0Z"></path>
+      </svg>
+        <div class="musikplay">
+          <img id="currentImage" class="current-image" src="" alt="" >
+          <h3 id="nyom1"></h3>
+          <p id="nyom2"></p>
+          <audio id="audioPlayer" controls>
+            <source id="audioSource" src="" type="audio/mpeg">
+          </audio>
+          <input type="range" value="0" id="progres">
+          <div class="controls">
+              <i class="fa-solid fa-backward" onclick="rewindAudio()"></i>
+              <i  class="pp fa-solid fa-play" id="ctrlicon" onclick="playPause()"></i>
+              <i class="fa-solid fa-forward" onclick="forwardAudio()"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="pemutarmusik">
+  <div class="populer">
+    <h2>Populer</h2>
+    <i id="left" class="fa-solid fa-angle-left"></i>
+    <i id="right" class="fa-solid fa-angle-right"></i>
+    <div class="wrapper-populer">
+      <div class="carousel-populer" draggable="false">
+        <ul id="list">
+          <div class="populer-list" onclick="playAudio('musik/Ed Sheeran-Shape of You.mp3', 'img/shape-of-you.webp')">
+          <i class="icon-play fa-solid fa-play"></i>
+          <img src="img/shape-of-you.webp" alt="img" draggable="false">
+            <h3>Ed Sheeran</h3>         
+            <p>Shape of You</p>
+        </div>
+        </ul>  
+        <ul id="list">
+          <div class="populer-list" onclick="playAudio('musik/Lewis Capaldi  Wish You The Best.mp3', 'img/Lewis_Capaldi_-_Wish_You_the_Best.png')">
+          <i class="icon-play fa-solid fa-play"></i>
+          <img src="img/Lewis_Capaldi_-_Wish_You_the_Best.png" alt="img" draggable="false">
+            <h3>Lewis Capaldi</h3>         
+            <p>Wish You The Best</p>
+        </div>
+        </ul>
+        <ul id="list">
+          <div class="populer-list" onclick="playAudio('musik/Astrid S - Hurts So Good.mp3', 'img/Astrid S - Hurts So Good.jpg')">
+          <i class="icon-play fa-solid fa-play"></i>
+          <img src="img/Astrid S - Hurts So Good.jpg" alt="img" draggable="false">
+            <h3>Astrid S</h3>         
+            <p>Hurts So Good</p>
+          
+        </div>
+        </ul>
+        <ul id="list">
+          <div class="populer-list" onclick="playAudio('musik/Ahmad - Cant Talk.mp3', 'img/canttalkn.jpg')">
+          <i class="icon-play fa-solid fa-play"></i>
+          <img src="img/canttalkn.jpg" alt="img" draggable="false">
+          <h3>Ahmad</h3>
+          <p>Can't Talk</p>
+        </div>
+        </ul>
+        <ul id="list">
+          <div class="populer-list" onclick="playAudio('musik/Coldplay - Fix You.mp3', 'img/Coldplay - Fix You.jpg')">
+          <i class="icon-play fa-solid fa-play"></i>
+          <img src="img/Coldplay - Fix You.jpg" alt="img" draggable="false">
+          <h3>Coldplay</h3>
+          <p>Fix You</p>
+        </div>
+        </ul>
+        <ul id="list">
+          <div class="populer-list" onclick="playAudio('musik/Coldplay - Yellow.mp3', 'img/Coldplay - Yellow.jpg')">
+          <i class="icon-play fa-solid fa-play"></i>
+          <img src="img/Coldplay - Yellow.jpg" alt="img" draggable="false">
+          <h3>Coldplay</h3>
+          <p>Yellow</p>
+        </div>
+        </ul>
+        <ul id="list">
+          <div class="populer-list" onclick="playAudio('musik/Daniel Caesar - Always.mp3', 'img/Daniel Caesar - Always.jpg')">
+          <i class="icon-play fa-solid fa-play"></i>
+          <img src="img/Daniel Caesar - Always.jpg" alt="img" draggable="false">
+          <h3>Daniel Caesar</h3>
+          <p>Always</p>
+        </div>
+        </ul>
+        <ul id="list">
+          <div class="populer-list" onclick="playAudio('musik/James Arthur - Cars Outside.mp3', 'img/James Arthur - Cars Outside.jpeg')">
+          <i class="icon-play fa-solid fa-play"></i>
+          <img src="img/James Arthur - Cars Outside.jpeg" alt="img" draggable="false">
+          <h3>James Arthur</h3>
+          <p>Cars Outside</p>
+        </div>
+        </ul>
+        <ul id="list">
+          <div class="populer-list" onclick="playAudio('musik/James Arthur - Naked.mp3', 'img/James Arthur - Naked.jpg')">
+          <i class="icon-play fa-solid fa-play"></i>
+          <img src="img/James Arthur - Naked.jpg" alt="img" draggable="false">
+          <h3>James Arthur</h3>
+          <p>Naked</p>
+        </div>
+        </ul>
+        <ul id="list">
+          <div class="populer-list" onclick="playAudio('musik/Alan Walker x Emma Steinbakken - Not You.mp3', 'img/not you.jpg')">
+          <i class="icon-play fa-solid fa-play"></i>
+          <img src="img/not you.jpg" alt="img" draggable="false">
+          <h3>Alan Walker X Emma</h3>
+          <p>Not You</p>
+        </div>
+        </ul>
+        <ul id="list">
+          <div class="populer-list" onclick="playAudio('musik/Love In The Dark - Adele.mp3', 'img/Love In The Dark - Adele.jpg')">
+          <i class="icon-play fa-solid fa-play"></i>
+          <img src="img/Love In The Dark - Adele.jpg" alt="img" draggable="false">
+          <h3>Adele</h3>
+          <p>Love In The Dark</p>
+        </div>
+        </ul>
+        <ul id="list">
+          <div class="populer-list" onclick="playAudio('musik/Miley Cyrus - Angels Like You.mp3', 'img/Miley Cyrus - Angels Like You.jpg')">
+          <i class="icon-play fa-solid fa-play"></i>
+          <img src="img/Miley Cyrus - Angels Like You.jpg" alt="img" draggable="false">
+          <h3>Miley Cyrus</h3>
+          <p>Angels Like You</p>
+        </div>
+        </ul>
+        <ul id="list">
+          <div class="populer-list" onclick="playAudio('musik/One Direction - Night Changes.mp3', 'img/One Direction - Night Changes.jpg')">
+          <i class="icon-play fa-solid fa-play"></i>
+          <img src="img/One Direction - Night Changes.jpg" alt="img" draggable="false">
+          <h3>One Direction</h3>
+          <p>Night Changes</p>
+        </div>
+        </ul>
+        <ul id="list">
+          <div class="populer-list" onclick="playAudio('musik/Wiz Khalifa - See You Again ft. Charlie Puth.mp3', 'img/Wiz Khalifa - See You Again ft. Charlie Puth.jpg')">
+          <i class="icon-play fa-solid fa-play"></i>
+          <img src="img/Wiz Khalifa - See You Again ft. Charlie Puth.jpg" alt="img" draggable="false">
+          <h3>Wiz Khalifa</h3>
+          <p>See You Again</p>
+        </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="trending">
+    <h2>Trending</h2>
+    <i id="left" class="fa-solid fa-angle-left"></i>
+    <i id="right" class="fa-solid fa-angle-right"></i>
+    <div class="wrapper-trending">
+      <div class="carousel-trending" >
+        <ul id="listg">
+        <div class="trending-list" onclick="playAudio('musikpop/Andmesh - Andaikan Kau Datang.mp3', 'imgpop/Andmesh - Andaikan Kau Datang.webp')">
+          <i class="icon-play fa-solid fa-play"></i>
+          <img src="imgpop/Andmesh - Andaikan Kau Datang.webp" alt="img" draggable="false">
+          <h3>Andmesh</h3>         
+          <p>Andaikan Kau Datang</p>
+        </div>
+        </ul>
+        <ul id="listg">
+        <div class="trending-list" onclick="playAudio('musikpop/Anggi Marito - Tak Segampang Itu.mp3', 'imgpop/Anggi Marito - Tak Segampang Itu.jpg')">
+          <i class="icon-play fa-solid fa-play"></i>
+          <img src="imgpop/Anggi Marito - Tak Segampang Itu.jpg" alt="img" draggable="false">
+          <h3>Anggi Marito</h3>         
+          <p>Tak Segampang Itu</p>
+        </div>
+        </ul>
+        <ul id="listg">
+        <div class="trending-list" onclick="playAudio('musikpop/Aruma - Muak.mp3', 'imgpop/Aruma - Muak.jpg')">
+          <i class="icon-play fa-solid fa-play"></i>
+          <img src="imgpop/Aruma - Muak.jpg" alt="img" draggable="false">
+          <h3>Aruma</h3>         
+          <p>Muak</p>
+        </div>
+        </ul>
+        <ul id="listg">
+        <div class="trending-list" onclick="playAudio('musikpop/For Revenge & Fiersa Besari - Ada Selamanya.mp3', 'imgpop/For Revenge & Fiersa Besari - Ada Selamanya.jpg')">
+          <i class="icon-play fa-solid fa-play"></i>
+          <img src="imgpop/For Revenge & Fiersa Besari - Ada Selamanya.jpg" alt="img" draggable="false">
+          <h3>For Revenge</h3>         
+          <p>Ada Selamanya</p>
+        </div>
+        </ul>
+        <ul id="listg">
+        <div class="trending-list" onclick="playAudio('musikpop/Lyodra, Andi Rianto - Sang Dewi.mp3', 'imgpop/Lyodra, Andi Rianto - Sang Dewi.jpg')">
+          <i class="icon-play fa-solid fa-play"></i>
+          <img src="imgpop/Lyodra, Andi Rianto - Sang Dewi.jpg" alt="img" draggable="false">
+          <h3>Lyodra & Andi Rianto</h3>         
+          <p>Sang Dewi</p>
+        </div>
+        </ul>
+        <ul id="listg">
+        <div class="trending-list" onclick="playAudio('musikpop/MAHALINI - SIAL.mp3', 'imgpop/MAHALINI - SIAL.jpg')">
+          <i class="icon-play fa-solid fa-play"></i>
+          <img src="imgpop/MAHALINI - SIAL.jpg" alt="img" draggable="false">
+          <h3>Mahalini</h3>         
+          <p>Sial</p>
+        </div>
+        </ul>
+        <ul id="listg">
+        <div class="trending-list" onclick="playAudio('musikpop/Sammy Simorangkir - Pergi Tak Kembali.mp3', 'imgpop/Sammy Simorangkir - Pergi Tak Kembali.jpg')">
+          <i class="icon-play fa-solid fa-play"></i>
+          <img src="imgpop/Sammy Simorangkir - Pergi Tak Kembali.jpg" alt="img" draggable="false">
+          <h3>Sammy Simorangki</h3>         
+          <p>Pergi Tak Kembali</p>
+        </div>
+        </ul>
+        <ul id="listg">
+        <div class="trending-list" onclick="playAudio('musikpop/Tiara Andini - Usai.mp3', 'imgpop/Tiara Andini - Usai.webp')">
+          <i class="icon-play fa-solid fa-play"></i>
+          <img src="imgpop/Tiara Andini - Usai.webp" alt="img" draggable="false">
+          <h3>Tiara Andini</h3>         
+          <p>Usai</p>
+        </div>
+        </ul>
+        <ul id="listg">
+        <div class="trending-list" onclick="playAudio('musikpop/TULUS - Hati-Hati di Jalan.mp3', 'imgpop/TULUS - Hati-Hati di Jalan.jpg')">
+          <i class="icon-play fa-solid fa-play"></i>
+          <img src="imgpop/TULUS - Hati-Hati di Jalan.jpg" alt="img" draggable="false">
+          <h3>Tulus</h3>         
+          <p>Hati-Hati di Jalan</p>
+        </div>
+        </ul>
+        <ul id="listg">
+        <div class="trending-list" onclick="playAudio('musikpop/Tulus - Perahu Kertas.mp3' , 'imgpop/Tulus - Perahu Kertas.jp')">
+          <i class="icon-play fa-solid fa-play"></i>
+          <img src="imgpop/Tulus - Perahu Kertas.jpg" alt="img" draggable="false">
+          <h3>Tulus</h3>         
+          <p>Perahu Kertas</p>
+        </div>
+        </ul>
+        <ul id="listg">
+        <div class="trending-list" onclick="playAudio('musikpop/Virgoun - Saat Kau Telah Mengerti.mp3', 'imgpop/Virgoun - Saat Kau Telah Mengerti.jpg')">
+          <i class="icon-play fa-solid fa-play"></i>
+          <img src="imgpop/Virgoun - Saat Kau Telah Mengerti.jpg" alt="img" draggable="false">
+          <h3>Virgoun</h3>         
+          <p>Saat Kau Telah Mengerti</p>
+        </div>
+        </ul>
+        <ul id="listg">
+        <div class="trending-list" onclick="playAudio('musikpop/Yovie Widianto - Menyesal.mp3', 'imgpop/Yovie Widianto - Menyesal.jpg')">
+          <i class="icon-play fa-solid fa-play"></i>
+          <img src="imgpop/Yovie Widianto - Menyesal.jpg" alt="img" draggable="false">
+          <h3>Yovie Widianto</h3>         
+          <p>Menyesal</p>
+        </div>
+        </ul>
+        <ul id="listg">
+        <div class="trending-list" onclick="playAudio('musikpop/Yura Yunita - Jalan Pulang.mp3', 'imgpop/Yura Yunita - Jalan Pulang.jpg')">
+          <i class="icon-play fa-solid fa-play"></i>
+          <img src="imgpop/Yura Yunita - Jalan Pulang.jpg" alt="img" draggable="false">
+          <h3>Yura Yunita</h3>         
+          <p>Jalan Pulang</p>
+        </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+
+<script src="script.js">
+
+</script>
+</body>
+</html>
