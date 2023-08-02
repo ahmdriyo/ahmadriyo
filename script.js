@@ -83,52 +83,47 @@ function playAudio(audioPath, imagePath ) {
 
   ctrlicon.classList.add("fa-pause");
   ctrlicon.classList.remove("fa-play");
-
-  //progres
-  
-  progres.oninput = function() {
-    audioPlayer.currentTime = progres.value;
-  };
-  
-  progres.onchange = function() {
-    audioPlayer.play();
-    ctrlicon.classList.add("fa-pause");
-    ctrlicon.classList.remove("fa-play");
-  };
-  
-  // Tambahkan fungsi untuk mengatur ulang waktu lagu
-  
-
 }
-  
+
+
 
 // control icon 
+let progres = document.getElementById("progres");
+let song = document.getElementById("audioPlayer");
+let ctrlicon = document.getElementById("ctrlicon");
 
   function rewindAudio() {
-    audioPlayer.currentTime -= 5;
+    song.currentTime -= 5;
   }
   function forwardAudio() {
-    audioPlayer.currentTime += 5;
+    song.currentTime += 5;
   }
+song.onloadedmetadata = function(){
+  progres.max = song.duration;
+  progres.value = song.currentTime;
+}
 function playPause() {
   if (ctrlicon.classList.contains("fa-pause")) {
-    audioPlayer.pause();
+    song.pause();
     ctrlicon.classList.remove("fa-pause");
     ctrlicon.classList.add("fa-play");
   } else {
-    audioPlayer.play();
+    song.play();
     ctrlicon.classList.add("fa-pause");
     ctrlicon.classList.remove("fa-play");
   }
 }
-if(audioPlayer.play()){
+if(song.play()){
   setInterval(() => {
-  progres.value = audioPlayer.currentTime;
+  progres.value = song.currentTime;
 }, 500);
-
 }
-
-
+progres.onchange = function() {
+  song.play();
+  song.currentTime = progres.value;
+  ctrlicon.classList.add("fa-pause");
+  ctrlicon.classList.remove("fa-play");
+  };
 
 
 
