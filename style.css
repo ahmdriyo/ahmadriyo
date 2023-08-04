@@ -478,7 +478,7 @@ background-color: #424242;
   margin-left: 25px;
   margin-top: -10px;
 }
-@media screen and (width < 1000px) {
+@media screen and (width < 1300px) {
   .trending{
     margin-left: 260px;
   }
