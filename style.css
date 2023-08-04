@@ -478,7 +478,7 @@ background-color: #424242;
   margin-left: 25px;
   margin-top: -10px;
 }
-@media screen and (width < 500px) {
+@media screen and (width < 1000px) {
   .trending{
     margin-left: 260px;
   }
@@ -488,8 +488,17 @@ background-color: #424242;
     width: 100%;
   }
   .icon i, #home{
-    margin-left: 20px;
+    margin-left: 50px;
     font-size: 50px;
+    margin-bottom: 10px;
+  }
+  .icon i p{
+    margin-top: -30px;
+    margin-left: 90px;
+  }
+  .musikplay {
+    margin-top: -550px;
+    margin-left: 900px;
   }
   .populer {
     margin-top: 850px;
