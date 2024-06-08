@@ -486,6 +486,7 @@ background-color: #424242;
     margin-top: 0px;
     top: 10px;
     width: 100%;
+    height: 830px;
   }
   .icon i, #home{
     margin-left: 50px;
@@ -504,8 +505,10 @@ background-color: #424242;
     margin-top: 850px;
     margin-left: 0px;
     margin-right: 10px;
-    width: 96%;
+    width: 127%;
     height: 1200px;
+    display: flex;
+    position: relative;
   }
   .populer #left{
     background-color: #ffffff;
